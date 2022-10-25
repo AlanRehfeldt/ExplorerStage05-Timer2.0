@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --bg-body: #FFFFFF;
+    --bg-card: #E1E1E6;
+    --bg-card-focused: #02799D;
+    --fill-card: #323238;
+    --fill-card-focused: #FFFFFF;
+
+    --ff-primary: 'Roboto', sans-serif;
+    --fc-primary: #323238;
+    --fc-primary-placeholder: #696974;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+input {
+    width: 15rem;
+    font-family: var(--ff-primary);
+    font-size: 12.6rem;
+    color: var(--fc-primary-placeholder);
+    border: none;
+    outline: none;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+body{
+    background: var(--bg-body);
+    height: 100vh;
+    width: 100vw;
+    font-family: var(--ff-primary);
+    font-size: 12.6rem;
+    color: var(--fc-primary);
+    display: grid;
+}
+
+.container {
+    margin-top: -10rem;
+    align-self: center;
+    justify-self: center;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 19.2rem;
+}
+
+.set-timer {
+    display: flex;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4.8rem;
+}
+
+.timer-display {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.controls {
+    display: flex;
+    gap: 4rem;
+}
+
+.cards {
+    display: grid;
+    gap: 3.2rem;
+    grid-template-areas: "A B" "C D";
+}
+
+.forest {
+    grid-area: A;
+}
+
+.rain {
+    grid-area: B;
+}
+
+.coffee-shop {
+    grid-area: C;
+}
+
+.fire-place {
+    grid-area: D;
+}
+
+.select path:nth-child(1) {
+    fill: var(--bg-card-focused);
+}
+
+.select path:nth-child(2) {
+    fill: var(--fill-card-focused);
+}
+
+.hide {
+    display: none;
+}
+
+
+
+
+
