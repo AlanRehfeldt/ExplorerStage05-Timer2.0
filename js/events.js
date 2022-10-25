@@ -1,6 +1,6 @@
-import { btnPlay, btnPause, btnStop, btnSet, btnAdd, btnSub, btnForest, btnRain, btnCoffeeShop, btnFirePlace, forestSound, rainSound, coffeeShopSound, firePlaceSound } from "./elements.js"
+import { btnPlay, btnPause, btnStop, btnSet, btnAdd, btnSub, btnForest, btnRain, btnCoffeeShop, btnFirePlace, forestSound, rainSound, coffeeShopSound, firePlaceSound, btnLightMode, btnDarkMode } from "./elements.js"
 
-export function Events({ controls, timer, sounds }) {
+export function Events({ controls, timer, sounds, darkMode }) {
     btnForest.addEventListener("click", () => {
         sounds.selecting(btnForest, forestSound)
     })
@@ -40,6 +40,14 @@ export function Events({ controls, timer, sounds }) {
 
     btnSub.addEventListener("click", () => {
         timer.subFiveMinutes()
+    })
+
+    btnLightMode.addEventListener("click", () => {
+        darkMode.on()
+    })
+
+    btnDarkMode.addEventListener("click", () => {
+        darkMode.off()
     })
 }
 

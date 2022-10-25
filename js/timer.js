@@ -8,18 +8,20 @@ export function Timer({ controls }) {
     let minutesSetted = minutesOnDisplay.textContent
     let secondsSetted = secondsOnDisplay.textContent
 
-    function upDateDisplay(minutes, seconds) {
-        minutesOnDisplay.innerText = String(minutes.padStart(2, "0"))
-        secondsOnDisplay.innerText = String(seconds.padStart(2, "0"))
+    function upDateMinutesDisplay(minutes) {
+        minutesOnDisplay.innerText = String(minutes).padStart(2, "0")
+    }
+    function upDateSecondsDisplay(seconds) {
+        secondsOnDisplay.innerText = String(seconds).padStart(2, "0")
     }
 
     function set() {
         minutesSet.addEventListener("input", () => {
-            minutesOnDisplay.innerText = minutesSet.value.padStart(2, "0")
+            upDateMinutesDisplay(minutesSet.value)
             minutesSetted = minutesSet.value
         })
         secondsSet.addEventListener("input", () => {
-            secondsOnDisplay.innerText = secondsSet.value.padStart(2, "0")
+            upDateSecondsDisplay(secondsSet.value)
             secondsSetted = secondsSet.value
         })
     }
@@ -37,10 +39,10 @@ export function Timer({ controls }) {
 
             if(runningSeconds === 0) {
                 runningSeconds = 60
-                minutesOnDisplay.innerText = String(runningMinutes - 1).padStart(2, "0")
+                upDateMinutesDisplay(runningMinutes - 1)
             }
 
-            secondsOnDisplay.innerText = String(runningSeconds - 1).padStart(2, "0")
+            upDateSecondsDisplay(runningSeconds - 1)
             play()
         }, 1000)
     }
@@ -51,17 +53,17 @@ export function Timer({ controls }) {
 
     function stop() {
         clearTimeout(timerTimeOut)
-        minutesOnDisplay.innerText = minutesSetted.padStart(2, "0")
-        secondsOnDisplay.innerText = secondsSetted.padStart(2, "0")
+        upDateMinutesDisplay(minutesSetted)
+        upDateSecondsDisplay(secondsSetted)
     }
 
     function addFiveMinutes() {
-        minutesOnDisplay.innerText = String(runningMinutes + 5).padStart(2, "0")
+        upDateMinutesDisplay(runningMinutes + 5)
     }
 
     function subFiveMinutes() {
         if(runningMinutes > 5) {
-            minutesOnDisplay.innerText = String(runningMinutes - 5).padStart(2, "0")
+            upDateMinutesDisplay(runningMinutes - 5)
         }
     }
 

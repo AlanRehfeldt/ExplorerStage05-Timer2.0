@@ -22,6 +22,10 @@ const rainSound = new Audio("./sounds/Chuva.wav")
 const coffeeShopSound = new Audio("./sounds/Cafeteria.wav") 
 const firePlaceSound = new Audio("./sounds/Lareira.wav") 
 
+const btnLightMode = document.querySelector("#sun")
+const btnDarkMode = document.querySelector("#moon")
+const turnDark = document.querySelector(".set-dark")
+
 export {
     btnPlay,
     btnPause,
@@ -42,5 +46,8 @@ export {
     forestSound,
     rainSound,
     coffeeShopSound,
-    firePlaceSound
+    firePlaceSound,
+    btnLightMode,
+    btnDarkMode,
+    turnDark
 }
