@@ -10,12 +10,10 @@
   <a href="#memo-licença">Licença</a>
 </p>
 
-<span align="center">
+<div align="center">
   <img alt="Imagem da landing page" src="./image1.png" width="50%">
-</span>
-<span align="center">
   <img alt="Imagem da landing page" src="./image2.png" width="50%">
-</span>
+</div>
 
 ## 🚀 Tecnologias
 
